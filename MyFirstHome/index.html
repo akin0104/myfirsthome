@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MyFirstHome – Starter Home Planner</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="logo">🏠 MyFirstHome</div>
+      <p class="tagline">Plan your dream home — one property at a time.</p>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ADD PROPERTY FORM -->
+    <section class="form-section">
+      <h2>Add a Property</h2>
+      <div class="form-grid">
+        <input type="text" id="propName" placeholder="Property name (e.g. 123 Maple Street)" />
+        <input type="number" id="propPrice" placeholder="Price (e.g. 450000)" min="0" />
+       <input type="url" id="propImageUrl" placeholder="Image URL (optional — paste a house photo link)" />
+        <textarea id="propNote" placeholder="Your personal notes about this property..." rows="3"></textarea>
+        <button id="addBtn" onclick="addProperty()">+ Add Property</button>
+      </div>
+    </section>
+
+    <!-- SUMMARY BAR -->
+    <section class="summary-bar" id="summaryBar" style="display:none;">
+      <div class="summary-item">
+        <span class="summary-label">Total Properties</span>
+        <span class="summary-value" id="totalCount">0</span>
+      </div>
+      <div class="summary-item">
+        <span class="summary-label">Favourites</span>
+        <span class="summary-value" id="favCount">0</span>
+      </div>
+      <div class="summary-item">
+        <span class="summary-label">Lowest Price</span>
+        <span class="summary-value" id="lowestPrice">—</span>
+      </div>
+      <div class="summary-item">
+        <span class="summary-label">Highest Price</span>
+        <span class="summary-value" id="highestPrice">—</span>
+      </div>
+    </section>
+
+    <!-- FILTER BUTTONS -->
+    <section class="filter-bar" id="filterBar" style="display:none;">
+      <button class="filter-btn active" onclick="filterProperties('all', this)">All</button>
+      <button class="filter-btn" onclick="filterProperties('favourites', this)">⭐ Favourites Only</button>
+    </section>
+
+    <!-- PROPERTY CARDS -->
+    <section class="cards-section" id="cardsSection">
+      <div class="empty-state" id="emptyState">
+        <div class="empty-icon">🏡</div>
+        <p>No properties added yet.</p>
+        <p class="empty-sub">Fill in the form above to start planning your first home!</p>
+      </div>
+      <div class="cards-grid" id="cardsGrid"></div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>MyFirstHome &copy; 2026 — Built with Vanilla JS &amp; LocalStorage</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
