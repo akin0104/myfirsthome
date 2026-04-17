@@ -19,7 +19,11 @@ MyFirstHome is a simple web app that helps users plan their first home by saving
 - CSS
 - Vanilla JavaScript
 - LocalStorage
+## Wireframe
+A hand-drawn low-fidelity wireframe is included in the repository.
 
+## Demo
+Open index.html in a browser to run the app.
 ## How to Run
 Open index.html in a browser.
 
